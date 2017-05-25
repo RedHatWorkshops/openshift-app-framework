@@ -1,0 +1,11 @@
+config:
+  vars:
+    - name: MINISHIFT_RELEASES_PAGE
+      desc: Minishift releases page
+      value: https://github.com/minishift/minishift/releases
+
+modules:
+  0-install-minishift:
+    name: Install Minishift
+  1-install-launchpad:
+    name: Install Launchpad

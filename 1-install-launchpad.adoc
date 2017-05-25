@@ -1,0 +1,52 @@
+[[install-minishift]]
+Install Minishift
+~~~~~~~~~~~~~~~
+
+Minishift is a tool that helps you run OpenShift locally by launching a single-node OpenShift cluster inside a virtual machine.
+With Minishift you can try out OpenShift or develop with it, day-to-day, on your local machine.
+
+[[for-mac]]
+For Mac
+^^^^^^
+
+[source,sh]
+----
+brew cask install minishift
+----
+
+[[start-minishift]]
+Start minishift
+^^^^^^^^^^^^^^^
+
+[source,sh]
+----
+minishift start --memory=4096
+oc login -u system:admin
+----
+
+[[download-startup-script]]
+Download Startup script
+^^^^^^^^^^^^^^^^^^^^^^^
+
+[source,sh]
+----
+wget https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
+chmod +x deploy_launchpad_mission.sh
+----
+
+[[get-a-github-person-token]]
+Get a github person token
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__________________________________
+https://github.com/settings/tokens
+__________________________________
+
+[[launch-mission-control]]
+Launch mission control
+^^^^^^^^^^^^^^^^^^^^^^
+
+[source,sh]
+----
+./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+----
