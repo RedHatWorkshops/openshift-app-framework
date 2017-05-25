@@ -25,6 +25,8 @@ chmod +x deploy_launchpad_mission.sh
 
 
 ### Launch mission control
+> Change variables here to match your environment details.
+
 ```sh
 ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ```
