@@ -1,5 +1,4 @@
 :data-uri:
-:toc:
 
 [[install-minishift]]
 = Install Minishift
