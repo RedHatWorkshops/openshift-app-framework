@@ -1,3 +1,7 @@
+> This is a TL;DR version of launching appframework a detailed version is here.  http://appdev.openshift.io/docs/minishift-installation.html
+
+
+
 ## Install minishift
 
 ### For Mac
