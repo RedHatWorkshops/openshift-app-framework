@@ -18,7 +18,7 @@ NOTE: Depending on your host OS, you have the choice of installing different hyp
 
 Depending on your host OS, you have the choice of the following hypervisors:
 
-* Mac OC X
+* Mac OS X
   - https://github.com/mist64/xhyve[xhyve] (default)
   - https://www.virtualbox.org/wiki/Downloads[VirtualBox]
   - https://www.vmware.com/products/fusion[VMware Fusion]
