@@ -1,13 +1,13 @@
 :data-uri:
 
 [[install-minishift]]
-= Install Minishift
+== Install Minishift
 
 Minishift is a tool that helps you run OpenShift locally by launching a single-node OpenShift cluster inside a virtual machine.
 With Minishift you can try out OpenShift or develop with it, day-to-day, on your local machine.
 
 [[prerequesites]]
-== Prerequisites
+=== Prerequisites
 
 Minishift requires a hypervisor to start the virtual machine on which the OpenShift cluster is provisioned.
 Make sure that the hypervisor of your choice is installed and enabled on your system before you start Minishift.
@@ -32,7 +32,7 @@ Depending on your host OS, you have the choice of the following hypervisors:
 
 
 [[manual-install]]
-== Manual Install
+=== Manual Install
 . Download the archive for your operating system from the {{MINISHIFT_RELEASES_PAGE}}[Minishift releases page] and unpack it.
 . Copy the contents of the directory to your preferred location.
 . Add the `minishift` binary to your `PATH` environment variable.
@@ -40,7 +40,7 @@ Depending on your host OS, you have the choice of the following hypervisors:
 WARNING: On Windows operating system, you need to execute the `minishift` binary from the drive containing your `%USERPROFILE%`` directory.
 
 [[automated-install]]
-== Automated Install
+=== Automated Install
 
 On OS X you can also use https://caskroom.github.io/[Homebrew Cask] to install the stable version of Minishift.
 
@@ -50,7 +50,7 @@ brew cask install minishift
 ----
 
 [[start-minishift]]
-== Start minishift
+=== Start minishift
 . Run the following command to start your OpenShift instance.
 +
 [source,sh]

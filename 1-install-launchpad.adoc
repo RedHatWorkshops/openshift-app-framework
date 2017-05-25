@@ -1,12 +1,12 @@
 :data-uri:
 
 [[install-launchpad]]
-= Install Launchpad
+== Install Launchpad
 
 This guide walks you through the process of installing the Launchpad application to run on a local cloud as provisioned by Minishift.
 
 [[prerequesites]]
-== Prerequisites
+=== Prerequisites
 
 The Launchpad application adds generated starter applications called Boosters to your GitHub namespace.
 This requires the Launchpad application to have access to your GitHub account, which is granted using a GitHub personal access token.
@@ -26,7 +26,7 @@ oc version
 ----
 
 [[get-a-github-person-token]]
-== Create a Github Personal Access Token
+=== Create a Github Personal Access Token
 
 To create a GitHub personal access token:
 
@@ -43,7 +43,7 @@ WARNING: This hex code only appears once and cannot be recreated. If you lose th
 
 
 [[download-startup-script]]
-== Download Startup script
+=== Download Startup script
 
 You can install the launch.openshift.io application to Minishift using an automated script. The script will:
 
@@ -67,7 +67,7 @@ chmod +x deploy_launchpad_mission.sh
 ----
 
 [[launch-mission-control]]
-== Launch Mission Control
+=== Launch Mission Control
 
 Run the script with username and password and provide it a project name and your Github username and token.
 
