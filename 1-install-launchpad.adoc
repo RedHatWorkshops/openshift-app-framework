@@ -1,28 +1,7 @@
-[[install-minishift]]
-Install Minishift
-~~~~~~~~~~~~~~~
+[[install-launchpad]]
+= Install Launchpad
 
-Minishift is a tool that helps you run OpenShift locally by launching a single-node OpenShift cluster inside a virtual machine.
-With Minishift you can try out OpenShift or develop with it, day-to-day, on your local machine.
 
-[[for-mac]]
-For Mac
-^^^^^^
-
-[source,sh]
-----
-brew cask install minishift
-----
-
-[[start-minishift]]
-Start minishift
-^^^^^^^^^^^^^^^
-
-[source,sh]
-----
-minishift start --memory=4096
-oc login -u system:admin
-----
 
 [[download-startup-script]]
 Download Startup script
@@ -50,3 +29,8 @@ Launch mission control
 ----
 ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
+### Open Mission control
+```sh
+oc project <PROJECT_NAME>
+oc get routes
+```
