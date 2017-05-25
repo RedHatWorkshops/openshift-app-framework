@@ -31,6 +31,11 @@ chmod +x deploy_launchpad_mission.sh
 ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ```
 
+### Open Mission control
+```sh
+oc project <PROJECT_NAME>
+oc get routes
+```
 
 
 
