@@ -18,7 +18,11 @@ NOTE: Depending on your host OS, you have the choice of installing different hyp
 
 Depending on your host OS, you have the choice of the following hypervisors:
 
+<<<<<<< HEAD
+* Mac OSX
+=======
 * Mac OS X
+>>>>>>> 8587abf9334fc8836b702b32188ee067b62ae663
   - https://github.com/mist64/xhyve[xhyve] (default)
   - https://www.virtualbox.org/wiki/Downloads[VirtualBox]
   - https://www.vmware.com/products/fusion[VMware Fusion]
@@ -34,30 +38,33 @@ Depending on your host OS, you have the choice of the following hypervisors:
 
 [[manual-install]]
 == Manual Install
-. Download the archive for your operating system from the {{MINISHIFT_RELEASES_PAGE}}[Minishift releases page] and unpack it.
+. Download the archive for your operating system from the {https://developers.redhat.com/products/cdk/download/}[Download CDK for Developer Use] and unpack it.
 . Copy the contents of the directory to your preferred location.
-. Add the `minishift` binary to your `PATH` environment variable.
+. Add the CDK version of `minishift` binary to your `PATH` environment variable.
 
 WARNING: On Windows operating system, you need to execute the `minishift` binary from the drive containing your `%USERPROFILE%`` directory.
 
-[[automated-install]]
-== Automated Install
-
-On OS X you can also use https://caskroom.github.io/[Homebrew Cask] to install the stable version of Minishift.
-
-[source,sh]
-----
-brew cask install minishift
-----
-
 [[start-minishift]]
 == Start minishift
+
+. Run the following command to before starting the instance
++
+[source,sh]
+----
+  minishift setup-cdk (before running minishift start the first time)
+  export MINISHIFT_USERNAME=<Red_Hat_username>
+  export MINISHIFT_PASSWORD=<Red_Hat_password>
+----
+  - Update value of "vm-driver" from "xhyve" to "virtualbox" from file ~/.minishift/config/config.json
+  - If any older version of minishift is installed before, remove ~/.minishift and re-run the above steps
+
 . Run the following command to start your OpenShift instance.
 +
 [source,sh]
 ----
 minishift start --memory=4096
 ----
+
 +
 . Login as administrator executing:
 +
