@@ -1,36 +1,92 @@
+:data-uri:
+:toc:
+
 [[install-launchpad]]
 = Install Launchpad
 
+This guide walks you through the process of installing the Launchpad application to run on a local cloud as provisioned by Minishift.
+
+[[prerequesites]]
+== Prerequisites
+
+The Launchpad application adds generated starter applications called Boosters to your GitHub namespace.
+This requires the Launchpad application to have access to your GitHub account, which is granted using a GitHub personal access token.
+
+To verify you have Minishift installed and configured:
+
+[source,sh]
+----
+minishift version
+----
+
+You also need to have the `oc` binary setup on your path. To verify you have `oc` on your path:
+
+[source,sh]
+----
+oc version
+----
+
+[[get-a-github-person-token]]
+== Create a Github Personal Access Token
+
+To create a GitHub personal access token:
+
+. Using a web browser, navigate to https://github.com/settings/tokens.
+. Select _Generate new token_.
+. Add a token description, for example *Launchpad on Minishift*.
+. Select the following parent scopes and all their children:
+* *repo*
+* *admin:repo_hook*
+. Click _Generate token_.
+. Save the hex code of the personal access token. You need this to complete the installation of the Launchpad application on Minishift.
+
+WARNING: This hex code only appears once and cannot be recreated. If you lose this hex code you will need to create a new personal access token.
 
 
 [[download-startup-script]]
-Download Startup script
-^^^^^^^^^^^^^^^^^^^^^^^
+== Download Startup script
+
+You can install the launch.openshift.io application to Minishift using an automated script. The script will:
+
+* Create a project in Minishift.
+* Deploy the Launchpad application to that project using the http://appdev.openshift.io/latest-launcher-template[latest template].
+* Configure the Launchpad application with your GitHub username and personal access token.
+* Update the Jenkins _serviceaccount_ to use the `admin` role.
+
+To download the script execute:
 
 [source,sh]
 ----
 wget https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
+----
+
+Then give it execution permission:
+
+[source,sh]
+----
 chmod +x deploy_launchpad_mission.sh
 ----
 
-[[get-a-github-person-token]]
-Get a github person token
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-__________________________________
-https://github.com/settings/tokens
-__________________________________
-
 [[launch-mission-control]]
-Launch mission control
-^^^^^^^^^^^^^^^^^^^^^^
+== Launch Mission Control
+
+Run the script with username and password and provide it a project name and your Github username and token.
 
 [source,sh]
 ----
 ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
-### Open Mission control
-```sh
+
+Make sure your are working on the project you created on the previous command:
+
+[source,sh]
+----
 oc project <PROJECT_NAME>
+----
+
+Get the URL and open Mission Control on browser by executing:
+
+[source,sh]
+----
 oc get routes
-```
+----

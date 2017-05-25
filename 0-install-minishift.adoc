@@ -59,6 +59,9 @@ brew cask install minishift
 minishift start --memory=4096
 ----
 +
+NOTE: Starting Minishift may trigger a download of large virtual machines or Linux container images.
+This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.
++
 . Login as administrator executing:
 +
 [source,sh]
